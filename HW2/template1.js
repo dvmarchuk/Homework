@@ -11,5 +11,24 @@
 // - get all elements with class fc_rules
 // - change the color of the text in all elements of fc_rules to red
 
-let contents = document.getElementById("content").innerHTML;
-console.log(contents)
+let content = document.getElementById("content").innerHTML;
+
+let rules = document.getElementById("rules").innerHTML;
+
+document.getElementById("content").innerHTML = "This is different content"
+
+document.getElementById("rules").innerHTML = "Rules are for suckers"
+
+let con = document.getElementsByTagName("rules").innerHTML;
+console.log(con)
+
+//?????
+// let fc_rules = document.querySelectorAll('.fc_rules').map(i => i.value = '');
+// console.log(fc_rules);
+
+
+
+
+
+
+//console.log(contents)
