@@ -93,16 +93,34 @@ let users = [ {name: 'vasya', age: 31, status: false},
 ];
 
 
-//- sort it by age (ascending and then descending separately)
-//- відсортувати його за  віком (зростання , а потім окремо спадання)
-users.age.sort(function(a, b) {
-    return b - a;
+//- відсортувати його за  віком (спадання)
+users.sort(function(a, b) {
+    return b.age - a.age;
 });
-console.log(users)
+//console.log(users)
 
 
-//- sort it by the number of characters in the name (ascending and then descending separately)
+//- відсортувати його за  віком (зростання)
+users.sort(function(a, b) {
+    return a.age - b.age;
+});
+//console.log(users)
+
+
+
 //- відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
+users.sort(function(a,b){
+    return b.name.length - a.name.length
+});
+//console.log(users);
+
+
+
+users.sort(function(a,b){
+    return a.name.length - b.name.length
+});
+//console.log(users);
+
 
 
 
@@ -112,6 +130,8 @@ console.log(users)
 // - пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор
 // (По якому принципу його створювати - ваше рішення), та зберегти це в новий масив
 // (первинний масив залишиться без змін)
+
+
 
 
 
