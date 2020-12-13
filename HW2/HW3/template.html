@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="users-box"></div>
+<div id="user-posts-box"></div>
+
+<script>
+    fetch('https://jsonplaceholder.typicode.com/comments')
+        .then(value => value.json())
+        .then(value => {
+
+            for (const post of value) {
+                let divElement = document.createElement('div');
+                divElement.innerHTML = `${post.id} - ${post.name} <a href="detail-${post.id}">details</a>`;
+                document.getElementById('users-box').appendChild(divElement);
+                let anchor = divElement.children[0];
+                anchor.onclick = function (e) {
+                    let postsBox = document.getElementById('user-posts-box');
+                    postsBox.innerText = '';
+                    e.preventDefault();
+                    let id = anchor.getAttribute('href').split('-')[1];
+                    fetch('https://jsonplaceholder.typicode.com/comments?postId=' + id)
+                        .then(value => value.json())
+                        .then(value => {
+                            console.log(value)
+                            for (const comments of value) {
+                                let postBoxElement = document.createElement('div');
+                                postBoxElement.innerText = comments.name + ' - \n' + comments.body;
+                                postsBox.appendChild(postBoxElement);
+                            }
+                        });
+                };
+
+            }
+        });
+
+
+</script>
+
+
+</body>
+</html>
