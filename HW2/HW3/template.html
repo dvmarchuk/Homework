@@ -15,7 +15,7 @@
 
             for (const post of value) {
                 let divElement = document.createElement('div');
-                divElement.innerHTML = `${post.id} - ${post.name} <a href="detail-${post.id}">details</a>`;
+                divElement.innerHTML = `${post.id} - ${post.name} <a href="detail-${post.postId}">details</a>`;
                 document.getElementById('users-box').appendChild(divElement);
                 let anchor = divElement.children[0];
                 anchor.onclick = function (e) {
