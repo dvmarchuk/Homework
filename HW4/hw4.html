@@ -7,12 +7,7 @@
 <body>
     <script>
 
-        /*Implement a typewriter.
-        You have the text "Hello World".
-        Your function should print this text for 1 character in the browser.
-        EACH new letter should be with a RANDOM delay of 0.1 to 1 second.
-        Thus, you should simulate the writing of this text by the user.
-*/
+
 
         let randomNum = Math.floor(Math.random() * 1000) + 100;
         let word = "Hello World";
@@ -29,8 +24,9 @@
                 },delay);
             });
         }
+
         typewriter(randomNum)
-            .then(function (){
+            .then(value => {
                 return typewriter(randomNum)
             })
             .then(value => {
@@ -44,7 +40,31 @@
             .then(value =>{
                 console.log(randomNum)
                 return typewriter(randomNum)
+            })            .then(value => {
+            return typewriter(randomNum)
             })
+            .then(value => {
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+            .then(value =>{
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+            .then(value =>{
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+            .then(value =>{
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+            .then(value =>{
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+
+
     </script>
 </body>
 </html>
