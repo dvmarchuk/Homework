@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typewriter</title>
+</head>
+<body>
+    <script>
+
+        /*Implement a typewriter.
+        You have the text "Hello World".
+        Your function should print this text for 1 character in the browser.
+        EACH new letter should be with a RANDOM delay of 0.1 to 1 second.
+        Thus, you should simulate the writing of this text by the user.
+*/
+
+        let randomNum = Math.floor(Math.random() * 1000) + 100;
+        let word = "Hello World";
+        let letter;
+        let i = -1;
+        function typewriter(delay) {
+            return new Promise(resolve => {
+                setTimeout(function(){
+                    letter = word.split("");
+                    i++;
+                    console.log(letter[i]);
+                    randomNum = Math.floor(Math.random() * 1000) + 100;
+                    resolve(letter[i])
+                },delay);
+            });
+        }
+        typewriter(randomNum)
+            .then(function (){
+                return typewriter(randomNum)
+            })
+            .then(value => {
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+            .then(value =>{
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+            .then(value =>{
+                console.log(randomNum)
+                return typewriter(randomNum)
+            })
+    </script>
+</body>
+</html>
